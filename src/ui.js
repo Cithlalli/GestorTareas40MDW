@@ -9,15 +9,17 @@ export const renderTasks = () => {
         const li = document.createElement("li");
         li.setAttribute("data-id", task.id);
 
-        //Añadir clase solo si la tarea está completada
-        if(task.completed === tue){
-        li.classList.add("completed");
+        // Añadir clase solo si la tarea está completada
+        if(task.completed === true) {
+            li.classList.add("completed");
         }
 
         li.innerHTML = `
-        ${task.text}
-        <button class="delete"> Eliminar</button>
-        <button class="toggle"> ${task.completed === false ? "Completar":""}</button>
+            ${task.text}
+            <button class="delete"> Eliminar </button>
+            <button class="toggle">${task.completed === false ? "Completar" : "Deshacer"}</button>
         `;
+
+        taskList.appendChild(li);
     });
-    }
+};

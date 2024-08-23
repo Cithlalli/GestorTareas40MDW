@@ -1,16 +1,16 @@
-//Listas de tarea
-let tasks = JSON.parse(localStorage.getItem('tasks')) ||[];
+// Lista de tareas
+let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
-//funcion para agregar tareas
+// Función para agregar tareas
 export const addTask = (task) => {
-    const newTask ={
-    id: Date.now(),
-    text: task,
-    completed: false,
+    const newTask = {
+        id: Date.now(),
+        text: task,
+        completed: false,
+    };
+    tasks.push(newTask);
+    localStorage.setItem('tasks', JSON.stringify(tasks));
 };
-tasks.push(newTask);
-localStorage.setItem('tasks',JSON.stringify(tasks));
-}
 
-//Función para poder traer laa lista de tareas
+// Función para poder traer la lista de tareas
 export const getTasks = () => tasks;

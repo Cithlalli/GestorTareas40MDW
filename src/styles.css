@@ -45,7 +45,7 @@ ul{
     list-style: armenian;
     padding: 0;
 }
-/*Estilos para el elemento */
+/*Estilos para el elemento de la lista */
 li{
     background-color: rgb(188, 149, 224);
     border: 1px solid gold;
@@ -54,7 +54,7 @@ li{
     justify-content: space-between;
     align-items: center;
 }
-/*para estilos para el elemnto completado de la lista*/
+/* estilos para el elemnto completado de la lista*/
 li.completed{
     text-decoration: line-through;
     color: rgb(195, 238, 4);
