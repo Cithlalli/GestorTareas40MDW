@@ -1,3 +1,38 @@
-import {returnerTasks} from "./ui";
+import { renderTasks } from "./ui";
+import { addTask, deleteTask, updateTask } from "./task";
 
-document.addEventListener
+document.addEventListener("DOMContentLoaded", () => {
+    // Hacemos visible la lista de tareas
+    renderTasks();
+
+    // Agregrar el evento para la función para agregar tareas
+    document.getElementById("task-form").addEventListener("submit", (e) =>{
+        e.preventDefault();
+        const taskInput = document.getElementById("task-input");
+        if(taskInput.value !== "") {
+            // Agregamos la tarea
+            addTask(taskInput.value);
+
+            // Volvemos a cargar la lista de tareas
+            renderTasks();
+
+            // Limpiar el input
+            document.getElementById("task-input").value = "";
+        }
+    });
+
+//Agregar el evento para lo botones
+document.getElementById("task-list").addEventListener("click",()=>{
+if(e.target.classList.constains("delete")){
+ const taskId = e.target.parentElement.getAtribute("data-id");
+ deleteTask(taskId);
+ renderTasks();
+}
+
+if(e.target.classList.constains("toggle")){
+    const taskId = e.target.parentElement.getAtribute("data-id");
+updateTask(taskId);
+renderTasks();
+}
+});
+});
