@@ -1,7 +1,7 @@
 /*estilo generales*/
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #e9dc93;
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -10,8 +10,14 @@ body {
     align-items: center;
 }
 
+.titulo{
+    text-align: center;
+    color: crimson;
+}
 /* Estilos para el contenedor principal*/
 #app{
+    border: #9cfba9;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 background-color:rgb(247, 200, 200);
 padding: 20px;
 border-radius: 5px;
@@ -29,6 +35,7 @@ input{
     margin: right 10px;
     border: 1px bisque solid;
     border-radius: 3px;
+    background-color: #9cfba9;
 }
 /*estilos al boton*/
 button{

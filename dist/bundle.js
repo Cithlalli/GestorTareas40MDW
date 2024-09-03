@@ -11,7 +11,7 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   addTask: () => (/* binding */ addTask),
-/* harmony export */   deleteTasks: () => (/* binding */ deleteTasks),
+/* harmony export */   deleteTask: () => (/* binding */ deleteTask),
 /* harmony export */   getTasks: () => (/* binding */ getTasks),
 /* harmony export */   updateTask: () => (/* binding */ updateTask)
 /* harmony export */ });
@@ -35,7 +35,7 @@ var getTasks = function getTasks() {
 };
 
 //  FUNCION PARA PODER TRAER LA LISTA DE TAREAS
-var deleteTasks = function deleteTasks(id) {
+var deleteTask = function deleteTask(id) {
   tasks = tasks.filter(function (task) {
     return task.id !== parseInt(id);
   });
@@ -173,15 +173,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //Agregar el evento para lo botones
   document.getElementById("task-list").addEventListener("click", function () {
-    if (e.target.classList.constains("delete")) {
+    if (e.target.classList.contains("delete")) {
       var taskId = e.target.parentElement.getAtribute("data-id");
-      deleteTask(taskId);
-      renderTask();
+      (0,_task__WEBPACK_IMPORTED_MODULE_1__.deleteTask)(taskId);
+      (0,_ui__WEBPACK_IMPORTED_MODULE_0__.renderTasks)();
     }
-    if (e.target.classList.constains("toggle")) {
+    if (e.target.classList.contains("toggle")) {
       var _taskId = e.target.parentElement.getAtribute("data-id");
       (0,_task__WEBPACK_IMPORTED_MODULE_1__.updateTask)(_taskId);
-      renderTask();
+      (0,_ui__WEBPACK_IMPORTED_MODULE_0__.renderTasks)();
     }
   });
 });

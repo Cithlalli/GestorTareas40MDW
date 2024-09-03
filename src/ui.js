@@ -19,7 +19,6 @@ export const renderTasks = () => {
             <button class="delete"> Eliminar </button>
             <button class="toggle">${task.completed === false ? "Completar" : "Deshacer"}</button>
         `;
-
         taskList.appendChild(li);
     });
 };

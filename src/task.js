@@ -16,7 +16,7 @@ export const addTask = (task) => {
 export const getTasks = () => tasks;
 
 //  FUNCION PARA PODER TRAER LA LISTA DE TAREAS
-export const deleteTasks = (id) =>{
+export const deleteTask = (id) =>{
     tasks = tasks.filter((task) => task.id !== parseInt (id));
     localStorage.setItem('tasks',JSON.stringify(tasks));
 };

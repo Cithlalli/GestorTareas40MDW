@@ -23,13 +23,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //Agregar el evento para lo botones
 document.getElementById("task-list").addEventListener("click",()=>{
-if(e.target.classList.constains("delete")){
- const taskId = e.target.parentElement.getAtribute("data-id");
- deleteTask(taskId);
- renderTasks();
+if(e.target.classList.contains("delete")){
+const taskId = e.target.parentElement.getAtribute("data-id");
+deleteTask(taskId);
+renderTasks();
 }
 
-if(e.target.classList.constains("toggle")){
+if(e.target.classList.contains("toggle")){
     const taskId = e.target.parentElement.getAtribute("data-id");
 updateTask(taskId);
 renderTasks();
