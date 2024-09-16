@@ -22,8 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 //Agregar el evento para lo botones
-document.getElementById("task-list").addEventListener("click",()=>{
+document.getElementById("task-list").addEventListener("click",e=>{
 if(e.target.classList.contains("delete")){
+    console.log(e.target.parentElement);
 const taskId = e.target.parentElement.getAtribute("data-id");
 deleteTask(taskId);
 renderTasks();

@@ -172,8 +172,9 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   //Agregar el evento para lo botones
-  document.getElementById("task-list").addEventListener("click", function () {
+  document.getElementById("task-list").addEventListener("click", function (e) {
     if (e.target.classList.contains("delete")) {
+      console.log(e.target.parentElement);
       var taskId = e.target.parentElement.getAtribute("data-id");
       (0,_task__WEBPACK_IMPORTED_MODULE_1__.deleteTask)(taskId);
       (0,_ui__WEBPACK_IMPORTED_MODULE_0__.renderTasks)();
